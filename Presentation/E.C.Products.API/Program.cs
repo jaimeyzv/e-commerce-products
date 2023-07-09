@@ -1,5 +1,7 @@
 using E.C.Products.Application.Interfaces.Persistence;
 using E.C.Products.Persistence.Repositories;
+using E.C.Products.Persistence.Shared;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+// Add Application Db Context options
+builder.Services.AddDbContext<ECProductsDbContext>(
+    options => {  
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    });
+
 
 var app = builder.Build();
 

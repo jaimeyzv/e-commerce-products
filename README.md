@@ -5,13 +5,14 @@ This is a another microservices that takes care of products and categories on th
 I applied some concepts on OOP such as SOLID, CQRS(Command Query Repository Segregations), Clean Architecture and Design Patterns
 Aldo, those are the libraties/depencencias I needed to make this application work :
 * GraphQL
-* NET7
+* NET 6
 * WebAPI
 * C# 11
 * EFCore
 * SQL SERVER
 * Datanotation
 * Automapper
+* HotChocolate
 
 # related projects
 The other microservices are:

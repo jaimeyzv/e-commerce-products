@@ -1,7 +1,9 @@
+using E.C.Products.API;
 using E.C.Products.Application.Interfaces.Persistence;
 using E.C.Products.Persistence.Repositories;
 using E.C.Products.Persistence.Shared;
 using Microsoft.EntityFrameworkCore;
+using GrapghQL = Microsoft.AspNetCore.Builder.GraphQLEndpointConventionBuilder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,7 @@ builder.Services.AddDbContext<ECProductsDbContext>(
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
 
+builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddFiltering().AddSorting();
 
 var app = builder.Build();
 
@@ -23,8 +26,12 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGraphQL(path: "/graphql");
 
 app.Run();

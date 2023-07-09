@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E.C.Products.Application", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E.C.Products.Persistence", "Infrastructure\E.C.Products.Persistence\E.C.Products.Persistence.csproj", "{0FE47EBA-3C68-414D-84B3-200D50D3CECB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E.C.Products.API", "Presentation\E.C.Products.API\E.C.Products.API.csproj", "{21D08EF3-7107-4D36-8734-9DC649834B7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0FE47EBA-3C68-414D-84B3-200D50D3CECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE47EBA-3C68-414D-84B3-200D50D3CECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE47EBA-3C68-414D-84B3-200D50D3CECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D08EF3-7107-4D36-8734-9DC649834B7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D08EF3-7107-4D36-8734-9DC649834B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D08EF3-7107-4D36-8734-9DC649834B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D08EF3-7107-4D36-8734-9DC649834B7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{081592C9-06EE-4EA4-8CBC-E7B3449C8976} = {1D362033-7C8F-4B6E-AB71-F73A357C11F9}
 		{EDFB4091-BA79-4756-B8D7-1A975F906F1E} = {1D362033-7C8F-4B6E-AB71-F73A357C11F9}
 		{0FE47EBA-3C68-414D-84B3-200D50D3CECB} = {103C14E6-ECA9-4CE2-9775-09A0E9F9ACCC}
+		{21D08EF3-7107-4D36-8734-9DC649834B7F} = {2F9D5B28-F7CF-4517-9FC4-DF087B7D52BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E9B71DEA-9E10-4138-AF6B-11C0A816B7D2}

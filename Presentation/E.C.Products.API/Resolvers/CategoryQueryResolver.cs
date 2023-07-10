@@ -20,24 +20,14 @@ namespace E.C.Products.API.Resolvers
 
         [GraphQLName("categories")]
         [GraphQLDescription("Categories API")]
-        public async Task<IEnumerable<CategoryViewModel>> GetCategoriesAsync()
+        [UseProjection]
+        [UseFiltering]
+        [UseSorting]
+        public async Task<IQueryable<CategoryViewModel>> GetCategoriesAsync()
         {
             var models = await this._categoryExecuter.ExecuteAsync();
-            var viewModels = models.Select(x => _mapper.Map<CategoryViewModel>(x)).ToList();
+            var viewModels = models.Select(x => _mapper.Map<CategoryViewModel>(x)).AsQueryable();
             return viewModels;
-        }
-
-        [GraphQLName("category")]
-        [GraphQLDescription("Get Category API")]
-        public async Task<CategoryViewModel> GetCategoryByNameAsync(string name)
-        {
-            var models = await this._categoryExecuter.ExecuteAsync();
-            var categoryFound = models.FirstOrDefault(x => x.Equals(name));
-            if (categoryFound != null) { 
-                return _mapper.Map<CategoryViewModel>(categoryFound); 
-            }
-
-            return new CategoryViewModel();
         }
     }
 }

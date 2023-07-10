@@ -23,11 +23,12 @@ builder.Services.AddDbContext<ECProductsDbContext>(
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
 
-//builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddFiltering().AddSorting();
-
 builder.Services.AddGraphQLServer()
-            .AddQueryType(q => q.Name("Query"))
-           .AddType<CategoryQueryResolver>();
+    .AddQueryType(q => q.Name("Query"))
+    .AddType<CategoryQueryResolver>()
+    .AddProjections()
+    .AddFiltering()
+    .AddSorting();
 
 var config = new MapperConfiguration(cfg =>
 {
@@ -42,7 +43,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseRouting();
 

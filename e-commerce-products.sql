@@ -22,6 +22,13 @@ CREATE TABLE [Categories]
 	IsActive	BIT NOT NULL,
 );
 
+INSERT INTO [Categories] VALUES(NEWID(), 'Calzado', 'Todos los productso relacionado a calzado', 1);
+INSERT INTO [Categories] VALUES(NEWID(), 'Lacteaos', 'Todos los productso relacionado a lacteos', 1);
+INSERT INTO [Categories] VALUES(NEWID(), 'Organico', 'Todos los productso que sean organicos', 1);
+
+SELECT	*
+FROM	[Categories]
+
 CREATE TABLE [Products]
 (
 	Id			UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID() NOT NULL,

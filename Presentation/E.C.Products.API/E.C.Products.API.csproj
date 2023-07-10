@@ -8,18 +8,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\E.C.Products.Application\E.C.Products.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\E.C.Products.Infrastructure\E.C.Products.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\E.C.Products.Persistence\E.C.Products.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="7.5.0" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.3.1" />
     <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.3.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
   </ItemGroup>
 
 </Project>

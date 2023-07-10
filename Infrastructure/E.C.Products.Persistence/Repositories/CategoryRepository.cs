@@ -1,6 +1,7 @@
 ﻿using E.C.Products.Application.Interfaces.Persistence;
 using E.C.Products.Domain.Entities;
 using E.C.Products.Persistence.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace E.C.Products.Persistence.Repositories
 {
@@ -16,6 +17,11 @@ namespace E.C.Products.Persistence.Repositories
         public Task AddAsync(Category entity)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<Category>> GetAll()
+        {
+            return await this._dbContext.Categories.ToListAsync();
         }
 
         public Task<Category> GetById(Guid id)

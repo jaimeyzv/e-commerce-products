@@ -14,9 +14,10 @@ namespace E.C.Products.Persistence.Repositories
             this._dbContext = dbContext;
         }
 
-        public Task AddAsync(Category entity)
+        public async Task<Category> AddAsync(Category entity)
         {
-            throw new NotImplementedException();
+            await this._dbContext.Categories.AddAsync(entity);
+            return entity;
         }
 
         public async Task<IEnumerable<Category>> GetAll()

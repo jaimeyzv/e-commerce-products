@@ -1,8 +1,7 @@
-﻿namespace E.C.Products.Application.UseCase.Category.Queries
+﻿namespace E.C.Products.Application.UseCase.Categories.Commands
 {
-    public class GetAllCategoriesModel
+    public class CreateCategoryModel
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }

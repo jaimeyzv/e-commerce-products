@@ -1,4 +1,4 @@
-﻿namespace E.C.Products.Application.ViewModels
+﻿namespace E.C.Products.Application.ViewModels.Response
 {
     public class CategoryViewModel
     {

@@ -1,7 +1,8 @@
 using AutoMapper;
 using E.C.Products.API.Resolvers;
 using E.C.Products.Application.Interfaces.Persistence;
-using E.C.Products.Application.UseCase.Category.Queries;
+using E.C.Products.Application.UseCase.Categories.Commands;
+using E.C.Products.Application.UseCase.Categories.Queries;
 using E.C.Products.Infrastructure.Mapper;
 using E.C.Products.Persistence.Repositories;
 using E.C.Products.Persistence.Shared;
@@ -15,7 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IGetAllCategories, GetAllCategories>();
-builder.Services.AddScoped<IGetAllCategories, GetAllCategories>();
+builder.Services.AddScoped<ICreateCategory, CreateCategory>();
 
 // Add Application Db Context options
 builder.Services.AddDbContext<ECProductsDbContext>(
@@ -26,6 +27,8 @@ builder.Services.AddDbContext<ECProductsDbContext>(
 builder.Services.AddGraphQLServer()
     .AddQueryType(q => q.Name("Query"))
     .AddType<CategoryQueryResolver>()
+    .AddMutationType(m => m.Name("Mutation"))
+    .AddType<CategoryMutationResolver>()
     .AddProjections()
     .AddFiltering()
     .AddSorting();

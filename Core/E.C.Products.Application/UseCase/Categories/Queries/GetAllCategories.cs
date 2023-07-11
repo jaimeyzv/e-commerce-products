@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using E.C.Products.Application.Interfaces.Persistence;
 
-namespace E.C.Products.Application.UseCase.Category.Queries
+namespace E.C.Products.Application.UseCase.Categories.Queries
 {
     public class GetAllCategories : IGetAllCategories
     {

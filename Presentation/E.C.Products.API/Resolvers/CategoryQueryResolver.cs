@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using E.C.Products.Application.UseCase.Category.Queries;
-using E.C.Products.Application.ViewModels;
+using E.C.Products.Application.UseCase.Categories.Queries;
+using E.C.Products.Application.ViewModels.Response;
 using GraphQLParser.AST;
 
 namespace E.C.Products.API.Resolvers
